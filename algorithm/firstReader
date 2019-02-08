@@ -1,0 +1,27 @@
+semaphore resource=1;
+semaphore rmutex=1;
+readcount=0;
+procedure WRITER
+resource.P(); . resource.P() is equivalent to wait(resource)
+<CRITICAL Section>
+<EXIT Section>
+resource.V();
+end procedure
+procedure READER
+rmutex.P(); . rmutex.P() is equivalent to wait(rmutex)
+<CRITICAL Section>
+readcount++;
+if readcount == 1 then
+resource.P();
+end if
+<EXIT CRITICAL Section>
+rmutex.V(); . resource.V() is equivalent to signal(resource)
+rmutex.P();
+<CRITICAL Section>
+readcount–;
+if readcount == 0) then
+resource.V();
+end if
+<EXIT CRITICAL Section>
+rmutex.V(); . rmutex.V() is equivalent to signal(rmutex)
+end procedure

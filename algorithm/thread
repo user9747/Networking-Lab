@@ -11,11 +11,12 @@ IF(f==0)
 	Begin For i<NUM_THREAD
 		call pthread_create(&thread,NULL,MyFunction,tid)
 	i++
+	END FOR
 ELSE
 	PRINT "parent : pid"
  	Begin For i<NUM_THREAD
                 call pthread_create(&thread,NULL,MyFunction,tid)
         i++
+	END FOR
 ENDIF
-End For
 STOP

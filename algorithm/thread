@@ -1,0 +1,21 @@
+START
+Let NUM_THREAD=10
+Procedure *MyFunction(void * tid)
+Begin
+	Print("Thread : "tid)
+End   MyFunction
+create pthread thread
+f=fork() //create fork
+IF(f==0)
+	PRINT "child : pid"
+	Begin For i<NUM_THREAD
+		call pthread_create(&thread,NULL,MyFunction,tid)
+	i++
+ELSE
+	PRINT "parent : pid"
+ 	Begin For i<NUM_THREAD
+                call pthread_create(&thread,NULL,MyFunction,tid)
+        i++
+ENDIF
+End For
+STOP

@@ -1,0 +1,25 @@
+semaphore resource=1;
+semaphore rmutex=1;
+semaphore wmutex=1;
+semaphore resource=1;
+readcount=0;
+writecount = 0;
+procedure READER
+<ENTRY Section>
+readTry.P()
+rmutex.P()
+readcount++
+if readcount == 1 then
+resource.P()
+end if
+rmutex.V()
+readTry.V()
+<CRITICAL Section>
+<EXIT Section>
+rmutex.P()
+readcount–
+if readcount == 0 then
+resource.V()
+end if
+rmutex.V()
+end procedure

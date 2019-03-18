@@ -1,0 +1,6 @@
+START
+CREATE TCP SOCKET
+Connect to server using IP and PORT
+SEND time request to server
+RECEIVE time from server
+STOP

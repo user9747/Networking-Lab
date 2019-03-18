@@ -10,6 +10,8 @@ s.listen(5)
 
 while True:
     c,addr=s.accept()
+    message=c.recv(1024)
     print ('Got Connection from',addr)
+    print message
     c.send('Thanks for connecting')
     c.close()

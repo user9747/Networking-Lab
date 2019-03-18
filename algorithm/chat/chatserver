@@ -1,0 +1,7 @@
+START
+Create TCP SOCKET
+Bind SOCKET to a PORT
+Start listing at the binded PORT for connection from CLIENTs
+append new CLIENT to list_clients
+CREATE a new thread for each CLIENT which accepts messages from CLIENT and broadcast to all in list_clients
+STOP 

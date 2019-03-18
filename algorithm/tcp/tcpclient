@@ -1,0 +1,6 @@
+START
+CREATE TCP SOCKET
+Connect to server using IP and PORT
+SEND message to server
+RECEIVE message from server
+STOP

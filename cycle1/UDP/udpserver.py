@@ -11,8 +11,8 @@ msgFromServer       = "Hello UDP Client\n"
 
 bytesToSend         = str.encode(msgFromServer)
 
-
-msg,addr=s.recvfrom(1024)
-print ('Got Connection from',addr)
-print'Message from Client: ',msg
-s.sendto(bytesToSend,addr)
+while True:
+    msg,addr=s.recvfrom(1024)
+    print ('Got Connection from',addr)
+    print'Message from Client: ',msg
+    s.sendto(bytesToSend,addr)

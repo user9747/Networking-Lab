@@ -1,0 +1,9 @@
+START
+Create TCP SOCKET
+Bind SOCKET to a PORT
+Start listing at the binded PORT for connection from CLIENT 
+WHILE TRUE:
+    ACCEPT connection from CLIENT
+    RECEIVE message from CLIENT
+    SEND message to CLIENT
+STOP

@@ -1,0 +1,5 @@
+START
+CREATE UDP SOCKET
+SEND message to server at IP and PORT
+RECEIVE message and address from server
+STOP

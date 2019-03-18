@@ -1,0 +1,13 @@
+START
+Create TCP SOCKET
+CONNECT to SERVER at IP,PORT
+CREATE a thread 
+    WHILE true:
+        RECEIVE user input
+        SEND input to SERVER
+WHILE true:
+    RECEIVE message from SERVER
+    PRINT message
+STOP
+
+

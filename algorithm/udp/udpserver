@@ -1,0 +1,7 @@
+START
+Create UDP SOCKET
+Bind SOCKET to a PORT
+WHILE TRUE:
+    RECEIVE message and address(IP,PORT) from CLIENT
+    SEND message to CLIENT address
+STOP

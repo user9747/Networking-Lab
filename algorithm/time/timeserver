@@ -1,9 +1,7 @@
 START
-Create TCP SOCKET
+Create UDP SOCKET
 Bind SOCKET to a PORT
-Start listing at the binded PORT for connection from CLIENT 
 WHILE TRUE:
-    ACCEPT connection from CLIENT
-    RECEIVE time request from CLIENT
-    SEND server time to CLIENT
+    RECEIVE time request and address(IP,PORT) from CLIENT
+    SEND time to CLIENT address
 STOP

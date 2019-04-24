@@ -1,0 +1,8 @@
+• Input a matrix, cost of size N X N.
+• Initialize a matrix, d of size N X N with values of cost.
+• Iterate through each node i.
+    – Iterate through each node j.
+    * Iterate through each node k.
+        · d[i][j]=min(d[i][j],cost[i][k]+d[k][j])
+
+• Display d[i][1..N] for all node i.

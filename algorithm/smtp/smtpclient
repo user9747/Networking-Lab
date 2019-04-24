@@ -1,0 +1,8 @@
+START
+CREATE TCP SOCKET
+Connect to server using IP and PORT
+WHILE INPUT ! = 'QUIT'
+    READ commands from INPUT
+    SEND commands to server
+    RECEIVE response from server
+STOP

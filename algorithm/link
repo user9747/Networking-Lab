@@ -1,0 +1,13 @@
+• Add u to vector, N’.
+• Input cost matrix, c.
+• for all node v
+    – if v is a neighbour of u
+        * D[v]=c[u][v]
+    – else
+        * D[v]= ∞
+• Iterate till size of N’ becomes N (no of nodes in network)
+    – Find a node w not in N’ such that D(w) is minimum
+    – Add w to N’
+    – Update D[v] for each neighbour v of w and not in N’
+    * D[v]=min(D[v],D[w]+c[w][v])
+• print d[v] for all node v

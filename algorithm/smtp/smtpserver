@@ -1,0 +1,32 @@
+START
+Create TCP SOCKET
+Bind SOCKET to a PORT
+Start listing at the binded PORT for connection from CLIENT 
+WHILE TRUE:
+    ACCEPT connection from CLIENT
+    RECEIVE commands from CLIENT
+    IF COMMAND == HELO
+        RESPONSE:250
+    ELSE IF COMMAND == MAILFROM
+        RECEIVE mailid from CLIENT
+        validate mailid
+        IF valid
+            RESPONSE:250 SENDER OK
+        ELSE
+            RESPONSE:421 SERVICE UNAVILABLE
+   ELSE IF COMMAND == RCPTTO
+        RECEIVE mailid from CLIENT
+        validate mailid
+        IF valid
+            RESPONSE:250 RECIPIENT OK
+        ELSE
+            RESPONSE:421 RECIPIENT UNAVILABLE
+    ELSE IF COMMAND == DATA
+        IF HELO==250 & MAILFROM==250 &RCPTTO==250
+            RESPONSE:354 Go Ahead, Enter data ending with <CRLF>.<CRLF>
+            BREAK
+        ELSE
+            RESPONSE:421 SERVICE UNAVILABLE
+READ message from CLIENT
+IF COMMAND==QUIT
+    STOP

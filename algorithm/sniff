@@ -1,0 +1,7 @@
+START
+CREATE SOCKET
+RECEIVE all packets
+UNPACK the packets
+FORMAT the packets
+PRINT the filtered data
+STOP

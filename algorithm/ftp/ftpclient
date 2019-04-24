@@ -1,0 +1,9 @@
+START
+CREATE TCP SOCKET
+Connect to server using IP and PORT
+SEND Filename to server
+IF response= FOUND
+    CREATE A FILE
+    RECEIVE packets from server until no more packets are send.
+    WRITE packets to a FILE
+STOP

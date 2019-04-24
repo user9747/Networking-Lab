@@ -1,0 +1,11 @@
+START
+Create TCP SOCKET
+Bind SOCKET to a PORT
+Start listing at the binded PORT for connection from CLIENT 
+WHILE TRUE:
+    ACCEPT connection from CLIENT
+    RECEIVE Filename from CLIENT
+    IF FILE Found
+        SEND FOUND
+        READ FILE AND SEND IT TO CLIENT
+STOP

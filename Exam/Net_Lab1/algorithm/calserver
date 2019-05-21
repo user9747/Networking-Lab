@@ -1,0 +1,19 @@
+CREATE Socket
+BIND to IP PORT
+Listen on PORT
+while True:
+    RECIEVE data from Server
+    split data into list tok
+    if tok[1] is 'add'
+        add the event to a calender list
+        send 'Successfully added' RESPONSE
+    if tok[1] is 'remove'
+        remove that users events from calender list
+        send 'Successfully removed' RESPONSE
+    if tok[1] is 'update'
+        remove that users event of that date from calender list
+        add the new event to calender list
+        send 'Successfully upadted' RESPONSE
+    if tok[1] is 'get'
+        find event with that user and event date
+        send event as RESPONSE

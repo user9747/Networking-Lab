@@ -2,7 +2,7 @@ import socket
 import datetime
 s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 s.bind(("127.0.0.1",8080))
-x=["albin@gmail.com","hello@gmail.com","jhondoe@gmail.com"]
+x=["albin@server.com","hello@server.com","jhondoe@server.com"]
 s.listen(5)
 conn,addr=s.accept()
 while 1:
@@ -10,7 +10,10 @@ while 1:
         tok=mail.split()
         print(mail)
         if tok[0]=='HELO':
-                conn.send("250 mail.example.org")
+                if tok[1]=='server.com':
+                        conn.send("250 server.com")
+                else:
+                        conn.send("421 Service Unavailable")
         elif tok[0]=='MAILFROM:':
                 flag1=0
                 for i in x: #checking if mail is in the list

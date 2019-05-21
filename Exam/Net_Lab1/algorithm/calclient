@@ -1,0 +1,3 @@
+CREATE Socket
+Connect to addr,port in ARGV
+send ARGS to SERVER

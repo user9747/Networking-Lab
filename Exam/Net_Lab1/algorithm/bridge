@@ -1,0 +1,37 @@
+Define mutex bridge_mutex
+Define mutex Traffic_mutex
+
+int traffic = 0
+
+Function car_left:
+    if traffic<=0:
+        Car waiting for left....
+    lock(Traffic_mutex)
+    traffic++
+    unlock(Traffic_mutex)
+    lock(bridge_mutex)
+    Car crossing....
+    unlock(bridge_mutex)
+    lock(Traffic_mutex)
+    traffic--
+    unlock(Traffic_mutex)
+
+Function car_right:
+    if traffic>=0:
+        Car waiting for right....
+    lock(Traffic_mutex)
+    traffic--
+    unlock(Traffic_mutex)
+    lock(bridge_mutex)
+    Car crossing....
+    unlock(bridge_mutex)
+    lock(Traffic_mutex)
+    traffic++
+    unlock(Traffic_mutex)
+
+Create thread for cars randomly:
+    if(car going left):
+        car_left
+    if(car going right):
+        car_right
+

@@ -1,17 +1,20 @@
 import socket
 
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 
-port=8080
+s.bind(('localhost',8080))
 
-s.bind(('',port))
+s.listen(5)
 
-s.listen(5) 
+c,addr=s.accept()
 
-while True:
-    c,addr=s.accept()
-    message=c.recv(1024)
-    print ('Got Connection from',addr)
-    print message
-    c.send('Thanks for connecting')
-    c.close()
+print addr
+
+msg = c.recv(1024)
+
+print msg
+c.send("poda")
+
+c.close()
+s.close()
+

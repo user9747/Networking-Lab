@@ -37,10 +37,11 @@ int main(){
         else{
              while(1){
                 read(pip2[0],&n,sizeof(n));
-                if(n%3 != 0)
-                    cout<<n<<" ";
                 if (n == 0)
                     break;
+                if(n%3 != 0)
+                    cout<<n<<" ";
+                
             }
         }
         

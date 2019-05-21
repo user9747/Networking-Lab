@@ -52,5 +52,5 @@ int main(){
              rc=pthread_create(&t1,NULL,Writer,(void *)i);
     }
    
-    pthread_exit(NULL);
+    pthread_join(t1,NULL);
 }
